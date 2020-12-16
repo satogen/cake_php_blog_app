@@ -2,6 +2,9 @@
 <ul>
   <?php foreach ($posts as $post) : ?>
     <!-- debug でデータを見ることができる -->
-    <li><?php debug($post); ?></li>
+    <?php //debug($post); 
+    ?>
+    <!-- h: HTMLをエスケープする関数 -->
+    <li><?php echo h($post['Post']['title']); ?></li>
   <?php endforeach; ?>
 </ul>
