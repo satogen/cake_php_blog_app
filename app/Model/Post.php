@@ -11,7 +11,6 @@ class Post extends AppModel
     'body' => array(
       'rule' => 'notEmpty',
       'message' => "空です"
-
     )
   );
 }
