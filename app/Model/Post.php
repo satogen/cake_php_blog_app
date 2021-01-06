@@ -5,11 +5,11 @@ class Post extends AppModel
   // 入力欄のバリデーションの設定
   public $validate = array(
     'title' => array(
-      'rule' => 'notEmpty',
+      'rule' => 'notBlank',
       'message' => "空です"
     ),
     'body' => array(
-      'rule' => 'notEmpty',
+      'rule' => 'notBlank',
       'message' => "空です"
     )
   );

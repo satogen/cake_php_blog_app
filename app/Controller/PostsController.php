@@ -60,4 +60,21 @@ class PostsController extends AppController
       }
     }
   }
+
+  public function edit($id = null)
+  {
+    $this->Post->id = $id;
+    // getだった場合
+    if ($this->request->is('get')) {
+      $this->request->data = $this->Post->read();
+    } else {
+      // postだった場合
+      if ($this->Post->save($this->request->data)) {
+        $this->Session->setFlash('success!');
+        $this->redirect(array('action' => 'index'));
+      } else {
+        $this->Session->setFlash('failed!'); // 保存失敗
+      }
+    }
+  }
 }
