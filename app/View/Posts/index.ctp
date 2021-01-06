@@ -3,7 +3,7 @@
   <?php foreach ($posts as $post) : ?>
     <li id='post_<?php echo $post['Post']['id'] ?>'>
       <!-- debug でデータを見ることができる -->
-      <?php //debug($post); 
+      <?php //debug($post);
       ?>
       <!-- h: HTMLをエスケープする関数 -->
       <!-- <li><?php// echo h($post['Post']['title']); ?></li> -->
