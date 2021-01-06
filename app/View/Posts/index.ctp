@@ -16,6 +16,9 @@
     // echo $this->Html->link($post['Post']['title'], '/posts/view/' . $post['Post']['id']); // cakephpフォルダからの相対パスでのリンク記述
     // echo $this->Html->link($post['Post']['title'], 'http://localhost/blog/posts/view/' . $post['Post']['id']); // 絶対パスでリンク先を記述
     echo $this->Html->link($post['Post']['title'], array("controller" => "posts", "action" => 'view', $post['Post']['id'])); // 配列でリンク先を記述
+
+    echo $this->Html->link('編集', array('action' => 'edit', $post['Post']['id'])); // 編集用リンクを追加
+
     ?>
   <?php endforeach; ?>
 </ul>

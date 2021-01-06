@@ -63,9 +63,10 @@ class PostsController extends AppController
 
   public function edit($id = null)
   {
-    $this->Post->id = $id;
+    $this->Post->id = $id; //　読み込むものを指定
     // getだった場合
     if ($this->request->is('get')) {
+      // formの値に読み込んだものをセット
       $this->request->data = $this->Post->read();
     } else {
       // postだった場合
