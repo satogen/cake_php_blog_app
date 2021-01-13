@@ -66,7 +66,6 @@ $cakeVersion = __d('cake_dev', 'CakePHP %s', Configure::version())
 		setTimeout(function() {
 			$('#flashMessage').fadeOut("slow");
 		}, 800);
-		// $()
 	</script>
 
 
