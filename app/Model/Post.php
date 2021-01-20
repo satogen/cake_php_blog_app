@@ -3,6 +3,9 @@
 class Post extends AppModel
 {
   public $hasMany = 'Comment';
+  public $hasAndBelongsToMany = 'Category';
+
+  // public $belongsTo = "Category";
 
   // 入力欄のバリデーションの設定
   public $validate = array(

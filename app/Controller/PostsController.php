@@ -4,7 +4,7 @@ class PostsController extends AppController
 {
   // Scaffoldのテンプレ
   // public $scaffold;
-
+  public $uses = array("Post", "Category");
   // html, formを用いることを宣言
   // viewの中で$this->Html, $this->Formが使えるようになる
   public $helpers = array('Html', 'Form');
@@ -27,6 +27,7 @@ class PostsController extends AppController
     // find：データを取ってくる
     // sets()の第一引数には変数名が入る。今回は、postsに入れるということになる
     $this->set('posts', $this->Post->find('all'));
+    $this->set('categories', $this->Category->find('all'));
 
     // タイトルの設定
     $this->set('title_for_layout', '記事一覧');
@@ -47,6 +48,8 @@ class PostsController extends AppController
 
   public function add()
   {
+    $this->set('categories', $this->Category->find('list'));
+
     // リクエストされたデータを表示
     // debug($this->request->data);
     // Postメソッドの場合
@@ -63,6 +66,8 @@ class PostsController extends AppController
 
   public function edit($id = null)
   {
+    $this->set('categories', $this->Category->find('list'));
+
     $this->Post->id = $id; //　読み込むものを指定
     // getだった場合
     if ($this->request->is('get')) {
