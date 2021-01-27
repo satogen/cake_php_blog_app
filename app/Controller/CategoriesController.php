@@ -4,7 +4,7 @@ class CategoriesController extends AppController
 {
   // Scaffoldのテンプレ
   // public $scaffold;
-  public $uses = array("Category", "Post");
+  public $uses = array("Category", "Post", "CategoriesPost");
 
   // html, formを用いることを宣言
   // viewの中で$this->Html, $this->Formが使えるようになる
